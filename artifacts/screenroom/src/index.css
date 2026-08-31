@@ -145,6 +145,8 @@
 .feature-wrap::before { content: ''; position: absolute; width: 76%; aspect-ratio: 1; right: -20%; top: 8%; border-radius: 50%; background: hsl(var(--primary)); opacity: .11; filter: blur(50px); }
 .feature-card { position: relative; overflow: hidden; min-height: 480px; border: 1px solid rgba(206, 184, 255, .22); border-radius: 18px; background: #1d1829; box-shadow: 26px 32px 0 rgba(95, 67, 151, .1); }
 .feature-art { position: absolute; inset: 0; background: linear-gradient(135deg, #302050 0%, #8768be 42%, #191522 76%); }
+.feature-art .poster-visual { opacity: .62; }
+.feature-art .poster-fallback { opacity: .42; }
 .feature-art::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 28%, rgba(15, 12, 23, .18) 50%, rgba(15, 12, 23, .97) 100%), radial-gradient(circle at 56% 26%, rgba(231, 217, 255,.78), transparent 2px); }
 .feature-art::after { content: 'SR'; position: absolute; right: 25px; top: 21px; font: 700 10px var(--app-font-mono); color: rgba(255,255,255,.72); letter-spacing: .18em; }
 .feature-geometry { position: absolute; width: 240px; height: 340px; left: 22%; top: 8%; border: 1px solid rgba(238, 226, 255, .43); transform: rotate(17deg); border-radius: 48% 48% 12% 12%; box-shadow: 0 0 0 18px rgba(215, 190, 255, .06), 0 0 90px rgba(197, 167, 255, .28); }
@@ -182,7 +184,8 @@
 .poster-hover-cta { position: absolute; z-index: 2; left: 12px; right: 12px; bottom: 13px; opacity: 0; transform: translateY(5px); transition: opacity .25s ease, transform .25s ease; text-align: center; color: hsl(var(--primary-foreground)); background: hsl(var(--primary)); border-radius: 6px; padding: 8px; font-size: 10px; font-weight: 700; }
 .poster-card:hover .poster-hover-cta { opacity: 1; transform: translateY(0); }
 .poster-copy { padding-top: 12px; }
-.poster-copy h3 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; letter-spacing: -.025em; }
+.poster-title { display: block; width: 100%; padding: 0; overflow: hidden; color: hsl(var(--foreground)); background: transparent; border: 0; text-align: left; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; letter-spacing: -.025em; cursor: pointer; }
+.poster-title:hover, .poster-title:focus-visible { color: hsl(var(--primary)); text-decoration: underline; text-decoration-color: hsl(var(--primary)); text-underline-offset: 4px; }
 .poster-copy p { margin-top: 5px; color: hsl(var(--muted-foreground)); font: 9px var(--app-font-mono); text-transform: uppercase; letter-spacing: .08em; }
 .discover { margin-top: 100px; padding-bottom: 120px; }
 .filter-bar { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; padding: 18px; margin-bottom: 27px; border: 1px solid hsl(var(--border)); border-radius: 12px; background: rgba(28, 24, 40, .62); }
