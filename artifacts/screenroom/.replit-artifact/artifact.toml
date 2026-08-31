@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Screenroom"
+description = "A cinematic movie and TV discovery app for exploring Hollywood, Bollywood, Tollywood, and global series by genre, with trailers and streaming links."
+version = "1.0.0"
+id = "artifacts/screenroom"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19467
+
+[services.development]
+run = "pnpm --filter @workspace/screenroom run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/screenroom", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/screenroom/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19467"
+BASE_PATH = "/"
